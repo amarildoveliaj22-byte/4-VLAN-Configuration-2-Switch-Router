@@ -44,6 +44,25 @@ to Router0, which routes traffic between the VLANs.
 - Inter-VLAN routing using router subinterfaces (G0/0.10, G0/0.20, G0/0.30, G0/0.40)
 - Full connectivity between all departments
 
+## Configuration
+
+### Router0
+
+```
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+```
+
+### Switch0
+
+```
+vlan 10
+ name Directorate
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+```
 ## How to Use
 
 1. Install Cisco Packet Tracer.
